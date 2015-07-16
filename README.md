@@ -1,3 +1,3 @@
 # instacloud-crawler
 
-An experimental project that fetches the most popular media from Instagram and presentes it as a 'picture cloud.
+An experimental project that fetches the most popular media from Instagram and presents it as a 'picture cloud.
