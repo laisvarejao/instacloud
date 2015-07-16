@@ -1,4 +1,4 @@
-require '../../../config/sequel'
+require '../../../config/database'
 
 module Model
 end

@@ -1,4 +1,4 @@
-require '../config/sequel'
+require '../config/database'
 
 DB.create_table :images do
   primary_key :id
