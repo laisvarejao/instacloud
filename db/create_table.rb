@@ -1,6 +1,6 @@
 require '../config/sequel'
 
-DB.create_table :media do
+DB.create_table :images do
   primary_key :id
   String :link
   String :image
