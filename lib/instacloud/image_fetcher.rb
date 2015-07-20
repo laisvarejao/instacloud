@@ -1,12 +1,12 @@
-require '../../../config/instagram'
-require '../model/image'
+require '../../config/instagram'
+require_relative 'image'
 
 module ImageFetcher
 	
 	def self.popular_media
 		client = Instagram.client()
 	  for media_item in client.media_popular
-	    Model::Image.create(
+	    Image.create(
 	    	:instagram_id => media_item.id,
 	    	:link => media_item.link,
 	    	:image => media_item.images.standard_resolution.url,
