@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Instagram's Trending Pictures</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/instagram.ico">
+    <script type="text/javascript" src="javascript/script.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>
+        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+        INSTAGRAM'S <br/> TRENDING PICTURES</h1>
+      <p>{ Bigger Pictures = Higher Popularity }</p>
+    </div>
+    <div id="cloud">  
+      <% for @image in @images %>
+        <a href="<%= @image.link %>" target="_blank">
+          <img onload="resize(this, getHeight(<%= @image.likes %>, <%= @max_likes %>))" src="<%= @image.image %>">
+        </a>
+      <% end %>
+    </div>
+  </body>
+</html>

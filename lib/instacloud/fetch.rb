@@ -1,4 +1,4 @@
-require '../../config/instagram'
+require_relative '../../config/instagram'
 require_relative 'image'
 
 module Fetch
@@ -12,7 +12,8 @@ module Fetch
 		  :link => media_item.link,
 		  :image => media_item.images.standard_resolution.url,
 		  :date => media_item.created_time,
-		  :likes => media_item.likes.count)
+		  :likes => media_item.likes[:count])
+	    puts '.'
 	  rescue Sequel::UniqueConstraintViolation => e
 	    puts "caught exception #{e}! ohnoes!"
 	  end

@@ -1,9 +1,9 @@
-require '../../config/database'
+require_relative '../../config/database'
 
 class Image < Sequel::Model
   
-  def today
-    Image.where{date > unix_formatted_date_for_today}
+  def popular_today
+    Image.where{date > Date.today.to_time.to_i}.reverse_order(:likes).limit(20)
   end
 
   private 
