@@ -1,5 +1,5 @@
-function getHeight(likes, max) {
-  return (likes * 150)/max;
+function getHeight(popularity, mostPopular) {
+  return (popularity * 300)/mostPopular;
 }
 
 function resize(element, height) {

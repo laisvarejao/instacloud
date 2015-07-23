@@ -15,10 +15,10 @@
         INSTAGRAM'S <br/> TRENDING PICTURES</h1>
       <p>{ Bigger Pictures = Higher Popularity }</p>
     </div>
-    <div id="cloud">  
+    <div id="cloud"> 
       <% for @image in @images %>
         <a href="<%= @image.link %>" target="_blank">
-          <img onload="resize(this, getHeight(<%= @image.likes %>, <%= @max_likes %>))" src="<%= @image.image %>">
+          <img src="<%= @image.image %>" onload="resize(this, getHeight(<%= @image.likes %>, <%= @most_popular %>))">
         </a>
       <% end %>
     </div>
