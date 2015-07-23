@@ -1,11 +1,10 @@
 require './lib/instacloud/image'
 
 get "/" do
-  @images = Image.new.popular_today.all.shuffle
-  @max_likes = @images.first.likes
+  @images = Image.new.popular_today.all
+	if @images
+	  @most_popular = @images.first.likes
+	  @images.shuffle!
+	end
   erb :index
-end
-
-get "/about" do
-  erb :about
 end
