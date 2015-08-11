@@ -1,7 +1,7 @@
 require './lib/instacloud/image'
 
 get "/" do
-  @images = Image.new.popular_today.all
+  @images = Image.new.popular_today
 	if @images
 	  @most_popular = @images.first.likes
 	  @images.shuffle!
