@@ -9,8 +9,9 @@ class Image < Sequel::Model
   end
 
   def popular_today
-    Image.where{date > Date.today.to_time.to_i}.reverse_order(:likes).limit(20)
-  end 
+    today = unix_formatted_date_for_today
+    Image.where{date > today}.reverse_order(:likes).limit(20).all
+  end
 
   private
 
