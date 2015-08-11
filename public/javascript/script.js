@@ -1,5 +1,5 @@
 function getHeight(popularity, mostPopular) {
-  return (popularity * 200)/mostPopular;
+  return (popularity * 400)/mostPopular;
 }
 
 function resize(element, height) {

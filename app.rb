@@ -1,10 +1,10 @@
-require './lib/instacloud/image'
+require './lib/instacloud/fetch'
 
 get "/" do
-  @images = Image.new.popular_today
-	if @images
-	  @most_popular = @images.first.likes
-	  @images.shuffle!
-	end
+  @images = Fetch.popular_now #Image.new.popular_today
+    if @images
+    @most_popular = Fetch.total_likes_most_popular(@images)
+    @images.shuffle!
+  end
   erb :index
 end
