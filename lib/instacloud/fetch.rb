@@ -1,6 +1,5 @@
 require_relative '../../config/instagram'
-# require_relative 'image'
-require_relative 'raw_image'
+require_relative 'image'
 
 module Fetch
 	
@@ -21,11 +20,11 @@ module Fetch
   #   end
   # end
 
-  def self.popular_now
+  def self.instagram_popular_now
     images = []
     client = Instagram.client()
     for media_item in client.media_popular
-      image = RawImage.new(
+      image = Image.new(
         media_item.link,
         media_item.images.standard_resolution.url,
         media_item.likes[:count]
@@ -33,7 +32,7 @@ module Fetch
       images << image
     end
     images
-  end
+  end  
 
   def self.total_likes_most_popular(images)
     sorted_images = images.sort_by(&:likes)
