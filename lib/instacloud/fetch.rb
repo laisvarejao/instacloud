@@ -24,12 +24,11 @@ module Fetch
     images = []
     client = Instagram.client()
     for media_item in client.media_popular
-      image = Image.new(
+      images << Image.new(
         media_item.link,
         media_item.images.standard_resolution.url,
         media_item.likes[:count]
       )
-      images << image
     end
     images
   end  
